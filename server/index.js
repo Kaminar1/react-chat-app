@@ -36,6 +36,8 @@ socketIO.on("connection", (socket) => {
     // console.log(data)
     socketIO.emit("messageResponse", data)
   })
+
+  socket.on("typing", (data) => socket.broadcast.emit("typingResponse", data))
 })
 
 // app.get("/api", (req, res) => {
